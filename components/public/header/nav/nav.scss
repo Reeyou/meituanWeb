@@ -1,0 +1,22 @@
+.nav {
+  float: right;
+  .container {
+    .list {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+      
+      .item {
+        &:hover {
+          color: #FE8C00;
+        }
+      }
+      dl {
+        display: none;
+      }
+    }
+  }
+}

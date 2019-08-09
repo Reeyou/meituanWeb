@@ -1,0 +1,17 @@
+.geo {
+  i {
+    margin-right: 4px;
+  }
+  .changeCity {
+    margin: 0 4px;
+    &:hover {
+      color: #FE8C00;
+    }
+  }
+  .city {
+    &:hover {
+      color: #FE8C00;
+      cursor: pointer;
+    }
+  }
+}
