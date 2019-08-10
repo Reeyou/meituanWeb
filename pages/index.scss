@@ -1,0 +1,111 @@
+.container {
+  .banner {
+    .menu {
+      float: left;
+    }
+    .slider-top {
+      .slider {
+        width: 550px;
+        height: 240px;
+        position: relative;
+        float: left;
+        padding: 16px;
+      }
+      .top-pic img{
+        margin-top: 16px;
+        float: left;
+        width: 160px;
+        height: 240px;
+      }
+      .user {
+        float: left;
+        width: 220px;
+        height: 230px;
+        text-align: center;
+        border: 1px solid #e2e2e2;
+        margin-top: 20px;
+        margin-left: 10px;
+        box-sizing: border-box;
+        padding-top: 24px;
+        .avatar img {
+          width: 54px;
+          height: 54px;
+          border-radius: 50%;
+        }
+        .name {
+          margin: 10px 0;
+          font-size: 14px;
+          color: #222;
+        }
+        button {
+          border: none;
+          outline: none;
+          display: block;
+          margin: 0 auto;
+          background: #fff;
+          border: 1px solid #e2e2e2;
+          border-radius: 10px;
+          padding: 10px 30px;
+          a {
+            font-size: 14px;
+            color: #222;
+          }
+          &:last-child {
+            margin-top: 14px;
+            background: #FE8C00;
+            a {
+              color: #fff;
+            }
+          }
+          &:hover {
+            opacity: 0.88;
+          }
+        }
+      }
+    }
+    .slider-bottom {
+      .footer {
+        float: left;
+        margin-left: 16px;
+        img {
+          margin-top: 20px;
+          width: 270px;
+          height: 100%;
+        }
+      }
+      .bottom-pic img{
+        margin-top: 10px;
+        margin-left: 16px;
+        float: left;
+        width: 160px;
+        height: 170px;
+      }
+      .qrcode {
+        float: left;
+        width: 220px;
+        height: 154px;
+        margin-left: 20px;
+        margin-top: 10px;
+        text-align: center;
+        border: 1px solid #e2e2e2;
+        img {
+          width: 100px;
+          height: 100px;
+          margin-top: 6px;
+        }
+        .app {
+          font-size: 16px;
+          margin: 2px;
+        }
+        .tips {
+          span {
+            font-size: 12px;
+            &:first-child{
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

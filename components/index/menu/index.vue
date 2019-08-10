@@ -16,11 +16,21 @@
         </li>
       </ul>
     </div>
-    <div class="item-container" v-if='flag'>
-      <dl v-for='(item, index) in currentItem.child' :key='index'>
-        <dt>{{currentItem.title}}</dt>
-        <dd v-for='(item, index) in item' :key='index'>{{item}}</dd>
+    <div
+      class="item-container"
+      v-if='kind'
+      @mouseenter="itemEnter"
+      @mouseleave="itemLeave"
+    >
+      <div
+        v-for='(item, index) in currentItem.child'
+        :key='index'
+      >
+      <dl>
+        <dt>{{item.title}}</dt>
+        <dd v-for='(name, index) in item.list' :key='index'>{{name}}</dd>
       </dl>
+    </div>
     </div>
   </div>
 </template>
@@ -28,8 +38,7 @@
 export default {
   data() {
     return {
-      type: '',
-      flag: false,
+      kind: '',
       menuList: [
         {
           icon: 'el-icon-fork-spoon',
@@ -38,16 +47,24 @@ export default {
             {
               title: '美食',
               list: ['代金卷','代金卷','代金卷','代金卷','代金卷','代金卷','代金卷',]
+            },
+            {
+              title: '美食',
+              list: ['代金卷','代金卷','代金卷','代金卷','代金卷','代金卷','代金卷',]
             }
           ]
         },
         {
-          icon: 'el-icon-fork-spon',
-          name: "美食",
+          icon: 'el-icon-question',
+          name: "恋爱",
           child: [
             {
-              title: '美食',
-              list: ['代金卷','代金卷','代金卷','代金卷','代金卷','代金卷','代金卷',]
+              title: '恋爱',
+              list: ['恋爱','恋爱','代金卷','代金卷','代金卷','代金卷','代金卷',]
+            },
+            {
+              title: '恋爱',
+              list: ['恋爱','恋爱','代金卷','代金卷','代金卷','代金卷','代金卷',]
             }
           ]
         }
@@ -55,24 +72,25 @@ export default {
     }
   },
   computed: {
-   
     currentItem: function() {
-      return this.menuList.filter(item => item.icon == this.type)[0]
+      return this.menuList.filter(item => item.icon == this.kind)[0]
     }
   },
   methods: {
     mouseEnter(e) {
-      console.log(this.menuList.filter(item => item.icon == this.type)),
-      this.type = e.target.querySelector('i').className
-      this.flag = true
-
-      const self = this
-      // self.timer = setInterval(function() {
-      //   self.type = ''
-      // },200)
+      this.kind = e.target.querySelector('i').className
     },
     mouseLeave() {
-      this.flag = false
+      const self = this
+      this.timer = setTimeout(function() {
+        self.kind = ''
+      },150)
+    },
+    itemEnter() {
+      clearTimeout(this.timer)
+    },
+    itemLeave() {
+      this.kind = ''
     }
   }
 }
