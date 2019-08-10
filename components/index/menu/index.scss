@@ -1,0 +1,52 @@
+.menu-container {
+  position: relative;
+  .list {
+    box-sizing: border-box;
+    margin-top: -50px;
+    width: 220px;
+    height: 475px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    color: #646464;
+    padding: 0 20px;
+    .title {
+      box-sizing: border-box;
+      height: 50px;
+      padding-top: 15px;
+      color: #000;
+      font-weight: bold;
+    }
+    > ul {
+      padding: 10px 0;
+      li {
+        padding: 8px 0;
+        font-size: 12px;
+      }
+    }
+  }
+  .item-container {
+    position: absolute;
+    left: 220px;
+    top: 60px;
+    background: #fff;
+    width: 400px;
+    height: 415px;
+    dl {
+      padding: 20px;
+      dt {
+        font-size: 16px;
+        color: #222;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(0,0,0,.28);
+      }
+      dd {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #999;
+        display: inline-block;
+        line-height: 20px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

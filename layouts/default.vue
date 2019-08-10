@@ -1,13 +1,13 @@
 <template>
-  <el-container class='main-container'>
-    <el-header>
+  <div class='main-container'>
+    <header style='height: auto'>
       <my-header />
-    </el-header>
-    <el-main>
+    </header>
+    <div>
       <nuxt />
-    </el-main>
-    <el-footer></el-footer>
-  </el-container>
+    </div>
+    <!-- <el-footer></el-footer> -->
+  </div>
 </template>
 <script>
 import myHeader from '../components/public/header/index'
@@ -22,4 +22,7 @@ export default {
     /* width: 1200px; */
     /* margin: 0 auto; */
   }
+  /* .div {
+    overflow:inherit;
+  } */
 </style>

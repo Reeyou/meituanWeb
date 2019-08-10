@@ -1,0 +1,112 @@
+.search-container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  .logo {
+    display: inline-block;
+    margin: 28px 40px 40px 0;
+    img {
+      width: 126px;
+      height: 46px;
+      border: 0;
+    }
+  }
+  .input-container {
+    position: absolute;
+    right: 0;
+  }
+  .input-control {
+    width: 550px;
+    height: 40px;
+    vertical-align: top;
+    padding-top: 28px;
+    font-size: 12px;
+    .search-input {
+      width: 85.45%;
+      box-sizing: border-box;
+      outline: none;
+      height: 100%;
+      border: 1px solid #e5e5e5;
+      border-right: none;
+      border-radius: 4px 0 0 4px;
+      padding: 0 10px;
+    }
+    .search-btn {
+      float: right;
+      outline: none;
+      border: none;
+      background: #FFC300;
+      color: #000;
+      border-radius:0 4px 4px 0;
+      width: 14.55%;
+      height: 100%;
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+  .more {
+    width: 85.45%;
+    font-size: 12px;
+    > ul {
+      // display: none;
+      box-shadow: 0 3px 5px rgba(0,0,0,.1);
+      padding: 10px 20px;
+      li {
+        padding: 10px 0;
+        color: #888;
+        &:hover {
+          color: #FE8C00;
+        }
+      }
+    }
+  }
+  .hot {
+    width: 85.45%;
+    font-size: 12px;
+    dl {
+      box-shadow: 0 3px 5px rgba(0,0,0,.1);
+      padding: 5px 20px;
+      dt {
+        font-weight: bold;
+        color: #222;
+        padding: 14px 0;
+      }
+      dd {
+        display: inline-block;
+        font-size: 12px;
+        padding: 4px 8px 8px 0;
+        color: #888;
+        &:hover {
+          color: #FE8C00;
+        }
+        &:first-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  .suggest {
+    width: 85.45%;
+    > ul {
+      padding: 10px 0px;
+      > li {
+        display: inline-block;
+        font-size: 12px;
+        padding-right: 8px;
+        color: #888;
+        
+        &:hover {
+          color: #FE8C00;
+        }
+        &:first-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

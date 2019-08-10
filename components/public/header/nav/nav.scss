@@ -1,21 +1,117 @@
 .nav {
   float: right;
+  font-size: 12px;
   .container {
     .list {
+      position: relative;
       display: inline-block;
+      padding: 0 14px;
       vertical-align: top;
-      margin-right: 16px;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      z-index: 1000;
       &:last-child {
         margin-right: 0;
       }
-      
-      .item {
+      &:hover {
+        background: #fff;
+        border-color: #e5e5e5;
+        // box-shadow: 0 3px 5px 0 #fff;
+        ul, .subContainer{
+          display: block;
+          background: #fff;
+        }
+      }
+      > ul > li a {
         &:hover {
           color: #FE8C00;
         }
       }
-      dl {
+      .nav-three {
+        width: 140%;
+      }
+      ul {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        text-align: center;
         display: none;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+      }
+      .subContainer {
+        display: none;
+        position: absolute;
+        box-sizing: border-box;
+        right: 0;
+        top: 100%;
+        // border: 1px solid #e5e5e5;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+        width: 1200px;
+        padding: 30px 36px 36px 46px;
+        z-index: 999;
+        dl {
+          display: inline-block;
+          font-size: 0;
+          vertical-align: top;
+          text-align: center;
+          margin-right: 60px;
+            &:last-child {
+              margin-right: 0;
+            }
+          dt {
+            font-size: 14px;
+            color: #222;
+          }
+          dd {
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: bottom;
+            text-align: center;
+            color: #999;
+            a {
+              &:hover {
+                color: #FE8C00;
+              }
+            }
+          }
+        }
+        .hotel {
+          width: 240px;
+          dd {
+            float: left;
+            width: 33%;
+          }
+        }
+        .food {
+          width: 160px;
+          dd {
+            width: 50%;
+          }
+        }
+        .movie {
+          width: 90px;
+        }
+        .app {
+          dd {
+            display: inline-block;
+            margin: 0 8px;
+            a {
+              img {
+                width: 60px;
+                height: 60px;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .has-noChild {
+      &:hover {
+        box-shadow: none;
+        background: transparent;
+        border-color: transparent;
       }
     }
   }
