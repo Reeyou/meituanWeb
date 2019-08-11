@@ -1,0 +1,23 @@
+$hoverColor: #fe8c00;
+
+$fontColorRed: #ec5330;
+
+$borderColor: #e2e2e2;
+
+$border: 1px solid #e2e2e2;
+
+$fontColor2: #222;
+
+$fontColor9: #999;
+
+$boxShadow: 0 2px 4px 0 rgba(0,0,0,.1);
+
+$senceShadow: 0 0 6px 2px rgba(0,0,0,.1);
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}

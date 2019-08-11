@@ -1,41 +1,83 @@
+@import '@/assets/css/common.scss';
+
+$sliderTopHeight: 240px;
+$sliderBottomHeight: 164px;
+
 .container {
+  width: 1200px;
+  margin: 0 auto;
   .banner {
     .menu {
       float: left;
     }
+    
     .slider-top {
+      padding: 10px;
+      float: left;
+      height: $sliderTopHeight;
+      position: relative;
+      .link {
+        position: absolute;
+        top: -32px;
+        left: 20px;
+        > ul {
+          > li {
+            display: inline-block;
+            padding-right: 20px;
+            &:nth-child(1), &:nth-child(4), &:nth-child(5) {
+              a:hover {
+                color: $hoverColor;
+              }
+            }
+            &:nth-child(2), &:nth-child(3), &:nth-child(6) {
+              a:hover {
+                color: $fontColorRed;
+              }
+            }
+            &:last-child {
+              padding-right: 0;
+            }
+            a {
+              color: $fontColor2;
+              font-size: 16px;
+              font-weight: 700;
+            }
+          }
+        }
+      }
       .slider {
+        float: left;
         width: 550px;
-        height: 240px;
+        height: 100%;
         position: relative;
-        float: left;
-        padding: 16px;
+        // padding: 0 10px;
       }
-      .top-pic img{
-        margin-top: 16px;
+      .top-pic {
         float: left;
-        width: 160px;
-        height: 240px;
-      }
+        height: 100%;
+        margin: 0 10px;
+        img{
+          width: 160px;
+          height: 100%;
+        }
+      } 
       .user {
         float: left;
         width: 220px;
-        height: 230px;
+        height: 100%;
         text-align: center;
-        border: 1px solid #e2e2e2;
-        margin-top: 20px;
-        margin-left: 10px;
+        border: $border;
         box-sizing: border-box;
-        padding-top: 24px;
+        padding-top: 30px;
         .avatar img {
           width: 54px;
           height: 54px;
           border-radius: 50%;
         }
         .name {
-          margin: 10px 0;
+          margin: 14px 0 20px 0;
           font-size: 14px;
-          color: #222;
+          color: $fontColor2;
         }
         button {
           border: none;
@@ -43,16 +85,16 @@
           display: block;
           margin: 0 auto;
           background: #fff;
-          border: 1px solid #e2e2e2;
-          border-radius: 10px;
-          padding: 10px 30px;
+          border: $border;
+          border-radius: 6px;
+          padding: 8px 30px;
           a {
-            font-size: 14px;
-            color: #222;
+            font-size: 12px;
+            color: $fontColor2;
           }
           &:last-child {
             margin-top: 14px;
-            background: #FE8C00;
+            background: $hoverColor;
             a {
               color: #fff;
             }
@@ -64,30 +106,38 @@
       }
     }
     .slider-bottom {
-      .footer {
+      float: left;
+      height: $sliderBottomHeight;
+      .pic {
         float: left;
-        margin-left: 16px;
+        height: 100%;
+        margin-left: 10px;
+        font-size: 0;
+        .pic1 {
+          margin-right: 10px;
+        }
         img {
-          margin-top: 20px;
           width: 270px;
           height: 100%;
         }
       }
-      .bottom-pic img{
-        margin-top: 10px;
-        margin-left: 16px;
+      .bottom-pic {
         float: left;
-        width: 160px;
-        height: 170px;
+        height: 100%;
+        img{
+          margin: 0 10px;
+          width: 160px;
+          height: 100%;
+        }
       }
       .qrcode {
         float: left;
         width: 220px;
-        height: 154px;
-        margin-left: 20px;
-        margin-top: 10px;
+        height: 100%;
+        padding-top: 6px;
+        box-sizing: border-box;
         text-align: center;
-        border: 1px solid #e2e2e2;
+        border: $border;
         img {
           width: 100px;
           height: 100px;
@@ -101,7 +151,7 @@
           span {
             font-size: 12px;
             &:first-child{
-              color: red;
+              color: $fontColorRed;
             }
           }
         }

@@ -1,14 +1,16 @@
+@import '@/assets/css/common.scss';
+
 .user-container {
   .username {
 
   }
   .login {
-    color: #FE8C00;
+    color: $hoverColor;
     margin-right: 8px;
   }
   .register {
     &:hover {
-      color: #FE8C00;
+      color: $hoverColor;
     }
   }
 }

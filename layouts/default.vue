@@ -7,13 +7,18 @@
       <nuxt />
     </div>
     <!-- <el-footer></el-footer> -->
+    <footer>
+      <myFooter />
+    </footer>
   </div>
 </template>
 <script>
-import myHeader from '../components/public/header/index'
+import myHeader from '../components/public/header'
+import myFooter from '../components/public/footer'
 export default {
   components: {
-    myHeader
+    myHeader,
+    myFooter
   }
 }
 </script>

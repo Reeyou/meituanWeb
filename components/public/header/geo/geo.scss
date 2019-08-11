@@ -1,3 +1,5 @@
+@import '@/assets/css/common.scss';
+
 .geo {
   i {
     margin-right: 4px;
@@ -5,12 +7,12 @@
   .changeCity {
     margin: 0 4px;
     &:hover {
-      color: #FE8C00;
+      color: $hoverColor;
     }
   }
   .city {
     &:hover {
-      color: #FE8C00;
+      color: $hoverColor;
       cursor: pointer;
     }
   }

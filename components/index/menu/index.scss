@@ -1,3 +1,5 @@
+@import '@/assets/css/common.scss';
+
 .menu-container {
   position: relative;
   width: 220px;
@@ -6,7 +8,7 @@
     margin-top: -50px;
     width: 220px;
     height: 475px;
-    border: 1px solid #e5e5e5;
+    border: $border;
     background: #fff;
     color: #646464;
     padding: 0 20px;
@@ -14,7 +16,7 @@
       box-sizing: border-box;
       height: 50px;
       padding-top: 15px;
-      color: #000;
+      color: $fontColor2;
       font-weight: bold;
     }
     > ul {
@@ -36,14 +38,14 @@
       padding: 20px;
       dt {
         font-size: 16px;
-        color: #222;
+        color: $fontColor2;
         padding-bottom: 20px;
-        border-bottom: 1px solid rgba(0,0,0,.28);
+        border-bottom: $border;
       }
       dd {
         margin-top: 20px;
         font-size: 12px;
-        color: #999;
+        color: $fontColor9;
         display: inline-block;
         line-height: 20px;
         padding-right: 10px;

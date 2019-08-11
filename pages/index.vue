@@ -1,11 +1,17 @@
 <template>
-  <div class="container">
-    <div class="banner">
+  <div class="container clearfix">
+    <div class="banner clearfix">
       <div class="menu">
         <Menu />
       </div>
-      <div class="plane"></div>
-      <div class="slider-top">
+      <div class="slider-top clearfix">
+        <div class="link">
+          <ul>
+            <li v-for='(plane,index) in planeList' :key='index'>
+              <a :href="plane.url">{{plane.name}}</a>
+            </li>
+          </ul>
+        </div>
         <div class="slider">
           <el-carousel style='height: 240px' :interval="5000" arrow="always">
             <el-carousel-item v-for="item in 4" :key="item">
@@ -14,31 +20,31 @@
           </el-carousel>
         </div>
         <div class="top-pic">
-          <img src="http://p0.meituan.net/codeman/e473bb428f070321269b23370ff02ba956209.jpg" alt="">
+          <img :src="topPic" alt="">
         </div>
         <div class="user">
           <div class="avatar">
-            <img src="//s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg" alt="">
+            <img :src="avatar" alt="">
           </div>
           <div class="name">欢迎登陆</div>
           <button><a href="">登录</a></button>
           <button><a href="">注册</a></button>
         </div>
       </div>
-      <div class='slider-bottom'>
-        <div class="footer">
+      <div class='slider-bottom clearfix'>
+        <div class="pic">
           <a href="//hotel.meituan.com" class="link" target="_blank">
-            <img src="http://p1.meituan.net/codeman/8cce56c467a17e04f3094d1e455462a0132772.png">
+            <img class='pic1' :src="pic1">
           </a>
           <a href="/jiaoyupeixun/?utm_source=MTPCmain-4" class="link" target="_blank">
-            <img src="http://p1.meituan.net/codeman/16442c19da1f1c4544f794e29d99c92051716.jpg">
+            <img :src="pic2">
           </a>
         </div>
         <div class="bottom-pic">
-          <img src="http://p1.meituan.net/codeman/5b21cddb4bb1cbc3a9c3bce0f726c75940469.jpg" alt="">
+          <img :src="bottomPic" alt="">
         </div>
         <div class="qrcode">
-          <img src="//s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png" alt="下载APP">
+          <img :src="qrCode" alt="下载APP">
           <div class="app">美团APP手机版</div>
           <div class="tips">
             <span>1元起</span>
@@ -47,14 +53,50 @@
         </div>
       </div>
     </div>
+    <div class="sence">
+      <Sence />
+      <Sence />
+      <Sence />
+    </div>
   </div>
 </template>
 
 <script>
   import Menu from '../components/index/menu'
+  import Sence from '../components/index/sence'
 export default {
+  data() {
+    return {
+      planeList: [{
+          url: 'https://waimai.meituan.com/',
+          name: "美团外卖"
+        },{
+          url: 'https://maoyan.com/',
+          name: "猫眼电影"
+        },{
+          url: 'https://hotel.meituan.com/shenzhen/',
+          name: "美团酒店"
+        },{
+          url: 'https://phoenix.meituan.com/',
+          name: "民宿公寓"
+        },{
+          url: 'https://bizvisualmeishi.meituan.com/bizsettle/settle/merchantsSettle?utm_source=mtxz',
+          name: "商家入驻"
+        },{
+          url: 'https://gongyi.meituan.com/',
+          name: "美团公益"
+        }],
+      topPic: "http://p0.meituan.net/codeman/e473bb428f070321269b23370ff02ba956209.jpg",
+      bottomPic: "http://p1.meituan.net/codeman/5b21cddb4bb1cbc3a9c3bce0f726c75940469.jpg",
+      pic1: 'http://p1.meituan.net/codeman/8cce56c467a17e04f3094d1e455462a0132772.png',
+      pic2: "http://p1.meituan.net/codeman/16442c19da1f1c4544f794e29d99c92051716.jpg",
+      avatar: "//s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg",
+      qrCode: "//s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png"
+    }
+  },
   components: {
-    Menu
+    Menu,
+    Sence
   }
 }
 </script>
@@ -79,10 +121,6 @@ export default {
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
   }
-.container {
-  width: 1200px;
-  margin: 0 auto;
-}
 /* .container {
   margin: 0 auto;
   min-height: 100vh;

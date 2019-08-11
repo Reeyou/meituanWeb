@@ -1,3 +1,5 @@
+@import '@/assets/css/common.scss';
+
 .nav {
   float: right;
   font-size: 12px;
@@ -15,8 +17,7 @@
       }
       &:hover {
         background: #fff;
-        border-color: #e5e5e5;
-        // box-shadow: 0 3px 5px 0 #fff;
+        border-color: $borderColor;
         ul, .subContainer{
           display: block;
           background: #fff;
@@ -24,7 +25,7 @@
       }
       > ul > li a {
         &:hover {
-          color: #FE8C00;
+          color: $hoverColor;
         }
       }
       .nav-three {
@@ -37,7 +38,7 @@
         width: 100%;
         text-align: center;
         display: none;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+        box-shadow: $boxShadow;
       }
       .subContainer {
         display: none;
@@ -46,7 +47,7 @@
         right: 0;
         top: 100%;
         // border: 1px solid #e5e5e5;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+        box-shadow: $boxShadow;
         width: 1200px;
         padding: 30px 36px 36px 46px;
         z-index: 999;
@@ -61,17 +62,17 @@
             }
           dt {
             font-size: 14px;
-            color: #222;
+            color: $fontColor2;
           }
           dd {
             font-size: 12px;
             display: inline-block;
             vertical-align: bottom;
             text-align: center;
-            color: #999;
+            color: $fontColor9;
             a {
               &:hover {
-                color: #FE8C00;
+                color: $hoverColor;
               }
             }
           }
