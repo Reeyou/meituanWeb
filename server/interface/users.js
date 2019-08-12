@@ -16,33 +16,33 @@ router.post('/register', (ctx) => {
     username,
     password,
     email,
-    // code
+    code
   } = ctx.request.body
 
-  // if(code) {
-  //   const sessionCode = await redisStore.hget(`nodemailer:${username}`, 'code')
-  //   const sessionExpire = await redisStore.hget(`nodemailer:${username}`, 'expire')
+  if(code) {
+    const sessionCode = redisStore.hget(`nodemailer:${username}`, 'code')
+    const sessionExpire = redisStore.hget(`nodemailer:${username}`, 'expire')
 
-  //   if(code === sessionCode) {
-  //     if(new Data().getTime() - sessionExpire > 0) {
-  //       ctx.body = {
-  //         code: -1,
-  //         msg: "验证码已过期，请重新尝试"
-  //       }
-  //       return false
-  //     } else {
-  //       ctx.body = {
-  //         code: -1,
-  //         msg: "请填写正确验证码"
-  //       }
-  //     }
-  //   }
-  // } else {
-  //   ctx.body = {
-  //     code: -1,
-  //     msg: "请填写验证码"
-  //   }
-  // }
+    if(code === sessionCode) {
+      if(new Date().getTime() - sessionExpire > 0) {
+        ctx.body = {
+          code: -1,
+          msg: "验证码已过期，请重新尝试"
+        }
+        return false
+      } else {
+        ctx.body = {
+          code: -1,
+          msg: "请填写正确验证码"
+        }
+      }
+    }
+  } else {
+    ctx.body = {
+      code: -1,
+      msg: "请填写验证码"
+    }
+  }
 
   let user = User.find({username})
   if(user.length) {
@@ -97,18 +97,18 @@ router.post('/login', async(ctx, next) => {
 
 router.post('/sendCode', async (ctx, next) => {
   let username = ctx.request.body.username
-  // const sessionExpire = new redisStore.hget( `nodemail:${username}`,'expire')
-  // if(sessionExpire && new Data().getTime() - sessionExpire < 0) {
-  //   ctx.body = {
-  //     code: -1,
-  //     msg: '请求频繁，请稍后再试'
-  //   }
-  //   return false
-  // }
+  const sessionExpire = redisStore.hget( `nodemail:${username}`,'expire')
+  if(sessionExpire && new Date().getTime() - sessionExpire < 0) {
+    ctx.body = {
+      code: -1,
+      msg: '请求频繁，请稍后再试'
+    }
+    return false
+  }
   // 发送对象
   let transporter = nodeMailer.createTransport({
     host: Email.stmp.host,
-    port: 587,
+    port: 465,
     secure: true,
     auth: {
       user: Email.stmp.user,
@@ -120,9 +120,10 @@ router.post('/sendCode', async (ctx, next) => {
   let ko = {
     code: Email.stmp.code(),
     expire: Email.stmp.expire(),
-    user: ctx.request.body.username,
+    // user: ctx.request.body.username,
     email: ctx.request.body.email
   }
+  console.log(ko)
 
   // 邮箱显示内容
   let mailOptions = {
@@ -134,9 +135,9 @@ router.post('/sendCode', async (ctx, next) => {
 
   await transporter.sendMail(mailOptions, (err, info) => {
     if(err) {
-      return console.log('error')
+      return console.log(err)
     } else {
-      redisStore.hmset(`nodemail:${ko.user}`,'code',ko.code,'expire',ko.expire,'email',jo.email)
+      redisStore.hmset(`nodemail:${ko.user}`,'code',ko.code,'expire',ko.expire,'email',ko.email)
     }
   })
   ctx.body={

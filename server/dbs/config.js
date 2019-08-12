@@ -19,7 +19,7 @@ export default {
       return '993830137@qq.com'
     },
     get pass() {
-      return 'pfnjcvizsrpmbbhj'
+      return 'sikkzpxbrbmbbdeg'
     },
     // 随机验证码
     get code() {

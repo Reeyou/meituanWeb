@@ -20,5 +20,10 @@ export async function getUserInfo(params) {
   return request('/user/getUserInfo')
 }
 export async function sendCode(params) {
-  return request('/user/sendCode')
+  return request('/user/sendCode', {
+    method: 'POST',
+    body: {
+      ...params
+    }
+  })
 }

@@ -38,7 +38,7 @@
           <span v-else class='count'>倒计时 {{sendCount}} 秒</span>
         </el-form-item>
         <el-form-item
-          prop="pwd"
+          prop="password"
           label="密码"
           :rules="{
             required: true, message: '密码不能为空', trigger: 'blur'
@@ -78,7 +78,7 @@ export default {
         checkpwd: '',
         code: ''
       },
-      sendDisabled: true,
+      sendDisabled: false,
       sendStatus: true,
       sendCount: 2
     }
@@ -90,7 +90,7 @@ export default {
     validatePwd(rule, value, callback) {
       if (value === '') {
         callback(new Error('请再次输入密码'));
-      } else if (value !== this.registerData.pwd) {
+      } else if (value !== this.registerData.password) {
         callback(new Error('两次输入密码不一致!'));
       } else {
         callback();
@@ -119,18 +119,18 @@ export default {
     },
     handleRegister() {
       this.$refs['registerData'].validate(valid => {
-        
+        const data = this.registerData 
         const params = {
           username: data.username,
-          password: data.pwd,
+          password: data.password,
           email: data.email,
           code: data.code
         }
         clearInterval(this.timer)
-        // register(params).then(res => {
+        register(params).then(res => {
 
-        //   console.log(res)
-        // })
+          console.log(res)
+        })
       })
     }
   }

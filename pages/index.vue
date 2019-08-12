@@ -64,6 +64,7 @@
 <script>
   import Menu from '../components/banner/menu'
   import Sence from '../components/banner/sence'
+  
 export default {
   data() {
     return {
@@ -93,6 +94,9 @@ export default {
       avatar: "//s0.meituan.net/bs/fe-web-meituan/e350c4a/img/avatar.jpg",
       qrCode: "//s1.meituan.net/bs/fe-web-meituan/60ac9a0/img/download-qr.png"
     }
+  },
+  methods: {
+    
   },
   components: {
     Menu,

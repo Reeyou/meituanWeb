@@ -1,8 +1,8 @@
 <template>
-  <div class='user-container'>
-    <template v-if="user">
+  <div class='container'>
+    <template v-if="username">
       欢迎您, <span class='username'>{{username}}</span>
-      [<nuxt-link to="logOut">退出</nuxt-link>]
+      [<span @click='logout'>退出</span>]
     </template>
     <template v-else>
       <nuxt-link to="login" class='login'>立即登录</nuxt-link>
@@ -11,11 +11,27 @@
   </div>
 </template>
 <script>
+import { getUserInfo } from '@/service/userApi.js'
 export default {
   data() {
     return {
-      user: ''
+      username: ''
+    }
+  },
+  created() {
+    getUserInfo().then(res => {
+      console.log(res)
+      this.username = res.username
+    })
+  },
+  methods: {
+    logout() {
+      this.username = ''
+      window.location.href = '/'
     }
   }
 }
 </script>
+<style lang="scss" scoped>
+  @import './user.scss'
+</style>
