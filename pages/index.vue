@@ -62,8 +62,8 @@
 </template>
 
 <script>
-  import Menu from '../components/index/menu'
-  import Sence from '../components/index/sence'
+  import Menu from '../components/banner/menu'
+  import Sence from '../components/banner/sence'
 export default {
   data() {
     return {

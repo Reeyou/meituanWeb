@@ -1,0 +1,37 @@
+@import '@/assets/css/common.scss';
+
+.user-container {
+  width: 100%;
+  margin-top: 40px; 
+  .register-container {
+    width: 1200px;
+    margin: 0 auto;
+    .form {
+      width: 420px;
+      .codeInput {
+        width: 63%;
+        display: inline-block;
+      }
+      .btn {
+        font-size: 12px;
+        border: $border;
+        border-radius: 6px;
+        background: #fff;
+        padding: 11px 24px;
+        transition: all 400ms ease;
+        &:hover {
+          border-color: #ccc;
+          // cursor: pointer;
+        }
+      }
+      .disabled {
+        background: #000;
+      }
+      .count {
+        font-size: 12px;
+        margin-left: 10px;
+        color: $fontColor9;
+      }
+    }
+  }
+}

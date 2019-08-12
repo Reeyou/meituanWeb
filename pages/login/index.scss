@@ -1,0 +1,19 @@
+@import '@/assets/css/common.scss';
+
+.user-container {
+  .login-container {
+    width: 1200px;
+    height: 370px;
+    margin: 0 auto;
+    .left {
+      float: left;
+    }
+    .right {
+      float: left;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+    }
+  }
+}

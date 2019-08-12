@@ -42,7 +42,21 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+
   ],
+  // axios: {
+  //   prefix: '/api/',
+  //   proxy: true
+  // },
+ 
+  // proxy: {
+  //   '/api/': {
+  //   target: 'https://maoyan.com/',
+  //   pathRewrite: {
+  //       '^/api/': ''
+  //     }
+  //   }
+  // },
   /*
   ** Build configuration
   */
