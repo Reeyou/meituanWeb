@@ -27,7 +27,7 @@
     "koa-session": "^5.12.2",
     "mongoose": "^5.6.9",
     "nodemailer": "^6.3.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.8.1",
     "passport-local": "^1.0.0",
     "qs": "^6.7.0"
   },
@@ -37,7 +37,7 @@
     "jest": "^24.1.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^13.2.0",
     "scss-loader": "0.0.1",
     "vue-jest": "^4.0.0-0"
   }
